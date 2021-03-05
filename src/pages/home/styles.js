@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background-color: black;
+  background-color: #1A649C;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +13,7 @@ export const Container = styled.div`
 export const Title = styled.h1`
   color: white;
   display: inline-flex;
-  padding-left: 3rem;
+  padding-left: 4.0rem;;
 `;
 
 export const MusicNote = styled.div`

@@ -1,7 +1,7 @@
-import SearchBar from '../search-bar/SearchBar';
+import SearchBar from '../../components/search-bar/SearchBar';
 import { Container, Title, MusicNote } from './styles';
 
-const Home = () => {
+const HomePage = () => {
   return (
     <Container>
       <Title>
@@ -13,4 +13,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

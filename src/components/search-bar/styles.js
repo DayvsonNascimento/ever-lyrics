@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Form = styled.form`
   width: 25%;
   position: relative;
 `;
@@ -16,9 +16,12 @@ export const SearchInput = styled.input`
   text-align: center;
 `;
 
-export const SearchIconWrapper = styled.div`
+export const SearchButton = styled.button`
   position: absolute;
   right: 0.5rem;
   top: 0.5rem;
+  background: none;
+  border: none;
+  outline: none;
   cursor: pointer;
 `;

@@ -1,14 +1,27 @@
-import { Container, SearchInput, SearchIconWrapper } from './styles';
+import { useState } from 'react';
+
+import { Form, SearchInput, SearchButton } from './styles';
 import SearchIcon from '@material-ui/icons/Search';
 
 const SearchBar = () => {
+  const [searchText, setsearchText] = useState('');
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    console.log(searchText);
+  };
+
   return (
-    <Container>
-      <SearchInput placeholder='Search songs and more...' />
-      <SearchIconWrapper>
+    <Form onSubmit={(e) => handleSearch(e)}>
+      <SearchInput
+        placeholder='Search songs and more...'
+        value={searchText}
+        onChange={(e) => setsearchText(e.target.value)}
+      />
+      <SearchButton type='submit'>
         <SearchIcon />
-      </SearchIconWrapper>
-    </Container>
+      </SearchButton>
+    </Form>
   );
 };
 
