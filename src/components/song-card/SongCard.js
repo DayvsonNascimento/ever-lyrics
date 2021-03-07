@@ -1,12 +1,12 @@
 import { CardContainer, Title, Image, SubTitle, CardContent } from './styles';
 
-const SongCard = () => {
+const SongCard = ({ SongInfo }) => {
   return (
     <CardContainer>
-      <Image src='https://images.genius.com/f3b9864dd2e715fc775eea7e185a9037.300x300x1.jpg' />
+      <Image src={SongInfo.thumbnail} />
       <CardContent>
-        <Title>Rooster</Title>
-        <SubTitle>Alice in Chains</SubTitle>
+        <Title>{SongInfo.songName}</Title>
+        <SubTitle>{SongInfo.artist}</SubTitle>
       </CardContent>
     </CardContainer>
   );
