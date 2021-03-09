@@ -1,14 +1,21 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { Form, SearchInput, SearchButton } from './styles';
 import SearchIcon from '@material-ui/icons/Search';
 
 const SearchBar = () => {
   const [searchText, setsearchText] = useState('');
+  const history = useHistory();
 
   const handleSearch = (event) => {
     event.preventDefault();
-    console.log(searchText);
+
+    if (searchText) {
+      const searchPath = `/results?search=${searchText}`;
+
+      history.push(searchPath);
+    }
   };
 
   return (
