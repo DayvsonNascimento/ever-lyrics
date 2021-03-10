@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import SongCard from '../../components/song-card/SongCard';
 import * as API from '../../services/search-service';
+import { Container, Title } from './styles.js';
 
 const SearchResultPage = () => {
   const [songs, setSongs] = useState([
@@ -19,12 +20,14 @@ const SearchResultPage = () => {
     },
   ]);
   const history = useHistory();
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const urlParams = new URLSearchParams(history?.location?.search);
-    const searchQuery = urlParams.get('search');
+    const search = urlParams.get('search');
 
-    loadSearchResults(searchQuery);
+    setSearchQuery(search);
+    loadSearchResults(search);
   }, [history]);
 
   const loadSearchResults = async (searchQuery) => {
@@ -32,15 +35,25 @@ const SearchResultPage = () => {
     const result_songs = response?.data?.response?.hits.map(
       (song) => song.result
     );
-    console.log('called')
+
     setSongs(result_songs);
   };
+
+  const handleSongSelection = (song) => {
+    console.log(song);
+  };
+
   return (
-    <div>
+    <Container>
+      <Title>Top results for "{searchQuery}" </Title>
       {songs.map((song, index) => (
-        <SongCard key={song?.id || index} songInfo={song} />
+        <SongCard
+          key={song?.id || index}
+          songInfo={song}
+          handleSelection={handleSongSelection}
+        />
       ))}
-    </div>
+    </Container>
   );
 };
 
