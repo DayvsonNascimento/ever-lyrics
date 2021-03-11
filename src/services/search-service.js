@@ -5,3 +5,9 @@ export const getSerchResults = async (param) => {
 
   return data;
 };
+
+export const getSongLyrics = async (param) => {
+  const data = await api.get('/song', { params: param });
+
+  return data;
+}

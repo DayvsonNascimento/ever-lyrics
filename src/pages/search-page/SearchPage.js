@@ -3,24 +3,13 @@ import { useHistory } from 'react-router-dom';
 
 import SongCard from '../../components/song-card/SongCard';
 import * as API from '../../services/search-service';
+
 import { Container, Title } from './styles.js';
 
 const SearchResultPage = () => {
-  const [songs, setSongs] = useState([
-    {
-      songName: 'Rooster',
-      artist: 'Alice in Chains',
-      thumbnail:
-        'https://images.genius.com/f3b9864dd2e715fc775eea7e185a9037.300x300x1.jpg',
-    },
-    {
-      songName: 'Desintegration',
-      artist: 'The Cure',
-      thumbnail: '',
-    },
-  ]);
-  const history = useHistory();
+  const [songs, setSongs] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const history = useHistory();
 
   useEffect(() => {
     const urlParams = new URLSearchParams(history?.location?.search);
@@ -41,6 +30,8 @@ const SearchResultPage = () => {
 
   const handleSongSelection = (song) => {
     console.log(song);
+    const path = '/lyrics';
+    history.push({ pathname: path, state: { song: song } });
   };
 
   return (
