@@ -6,7 +6,7 @@ export const CardContainer = styled.div`
   height: 90px;
   border-radius: 10px;
   margin: 10px;
-  background: whitesmoke;
+  background: white;
   box-shadow: 0.25rem 0.25rem 0.6rem rgb(0 0 0 / 10%),
     0 0.5rem 1.125rem rgb(75 0 0 / 10%);
   transition: transform 350ms ease;
