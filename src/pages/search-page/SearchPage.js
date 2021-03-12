@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import SongCard from '../../components/song-card/SongCard';
+
 import * as API from '../../services/search-service';
 
 import { Container, Title } from './styles.js';
@@ -17,7 +18,7 @@ const SearchResultPage = () => {
 
     setSearchQuery(search);
     loadSearchResults(search);
-  }, [history]);
+  }, [history, history.location]);
 
   const loadSearchResults = async (searchQuery) => {
     const response = await API.getSerchResults({ searchQuery: searchQuery });

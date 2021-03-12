@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 
 import * as API from '../../services/search-service';
 
+import { Container, LyricsContainer } from './styles.js';
+
 const SongLyricsPage = () => {
   const [song, setSong] = useState({});
   const history = useHistory();
@@ -12,7 +14,6 @@ const SongLyricsPage = () => {
     const response = await API.getSongLyrics(params);
 
     setSong(response?.data?.song);
-    console.log(song.lyrics)
   };
 
   useEffect(() => {
@@ -21,7 +22,11 @@ const SongLyricsPage = () => {
     loadSongLyrics(selectedSong);
   }, [history]);
 
-  return <pre>{song.lyrics}</pre>;
+  return (
+    <Container>
+      <LyricsContainer>{song.lyrics}</LyricsContainer>
+    </Container>
+  );
 };
 
 export default SongLyricsPage;
