@@ -30,5 +30,5 @@ export const SubTitle = styled.div`
 `;
 
 export const Image = styled.img`
-  max-width: 90px;
+  width: 90px;
 `;

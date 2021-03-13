@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import * as API from '../../services/search-service';
 
-import { Container, LyricsContainer } from './styles.js';
+import { Container, Image, Header, LyricsContainer, Info } from './styles.js';
 
 const SongLyricsPage = () => {
   const [song, setSong] = useState({});
@@ -24,6 +24,13 @@ const SongLyricsPage = () => {
 
   return (
     <Container>
+      <Header>
+        <Image src={song.song_art_image_thumbnail_url}></Image>
+        <Info>
+          <h1>{song.title_with_featured}</h1>
+          <h2>{song.primary_artist?.name}</h2>
+        </Info>
+      </Header>
       <LyricsContainer>{song.lyrics}</LyricsContainer>
     </Container>
   );
