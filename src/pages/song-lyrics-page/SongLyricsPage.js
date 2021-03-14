@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import * as API from '../../services/search-service';
 
+import Media from '../../components/media/Media';
 import { Container, Image, Header, LyricsContainer, Info } from './styles.js';
 
 const SongLyricsPage = () => {
@@ -31,7 +32,12 @@ const SongLyricsPage = () => {
           <h2>{song.primary_artist?.name}</h2>
         </Info>
       </Header>
-      <LyricsContainer>{song.lyrics}</LyricsContainer>
+
+      <LyricsContainer>
+        <div>{song.lyrics}</div>
+
+        {song.media ? <Media medias={song.media} /> : null}
+      </LyricsContainer>
     </Container>
   );
 };
