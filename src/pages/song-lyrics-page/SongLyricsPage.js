@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import * as API from '../../services/search-service';
 
@@ -8,20 +8,20 @@ import { Container, Image, Header, LyricsContainer, Info } from './styles.js';
 
 const SongLyricsPage = () => {
   const [song, setSong] = useState({});
-  const history = useHistory();
+  const location = useLocation();
 
-  const loadSongLyrics = async (selectedSong) => {
-    const params = { song_id: selectedSong.id };
+  const loadSongLyrics = async (selectedSongId) => {
+    const params = { song_id: selectedSongId };
     const response = await API.getSongLyrics(params);
 
     setSong(response?.data?.song);
   };
 
   useEffect(() => {
-    const selectedSong = history.location.state.song;
+    const selectedSongId = location?.state.songId;
 
-    loadSongLyrics(selectedSong);
-  }, [history]);
+    loadSongLyrics(selectedSongId);
+  }, [location]);
 
   return (
     <Container>

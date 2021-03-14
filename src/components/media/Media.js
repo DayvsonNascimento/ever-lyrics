@@ -18,7 +18,6 @@ const Media = ({ medias }) => {
       {}
     );
 
-    console.log(mediasObj);
     setMedia(mediasObj);
   }, [medias]);
 
