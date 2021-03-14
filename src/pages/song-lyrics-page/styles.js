@@ -18,16 +18,15 @@ export const Info = styled.div`
 export const LyricsContainer = styled.div`
   margin-top: 2rem;
   white-space: pre-wrap;
-  display: flex;
-  justify-content: center;
   font-family: Arial, sans-serif;
   line-height: 1.5;
   color: #444;
+  display: flex;
 }
 `;
 
 export const Image = styled.img`
   width: 150px;
   height: 150px;
-  border: solid #44444433
+  border: solid #44444433;
 `;

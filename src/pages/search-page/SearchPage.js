@@ -30,7 +30,6 @@ const SearchResultPage = () => {
   };
 
   const handleSongSelection = (song) => {
-    console.log(song);
     const path = '/lyrics';
     history.push({ pathname: path, state: { song: song } });
   };
