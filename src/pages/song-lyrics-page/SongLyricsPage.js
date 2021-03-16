@@ -4,7 +4,18 @@ import { useLocation } from 'react-router-dom';
 import * as API from '../../services/search-service';
 
 import Media from '../../components/media/Media';
-import { Container, Image, Header, LyricsContainer, Info } from './styles.js';
+import SongInfo from '../../components/song-info/SongInfo';
+import {
+  Container,
+  Image,
+  Header,
+  InfoContainer,
+  SongTitle,
+  ArtistName,
+  ContentContainer,
+  Lyrics,
+  SongInfoContainer,
+} from './styles.js';
 
 const SongLyricsPage = () => {
   const [song, setSong] = useState({});
@@ -27,17 +38,27 @@ const SongLyricsPage = () => {
     <Container>
       <Header>
         <Image src={song.song_art_image_thumbnail_url}></Image>
-        <Info>
-          <h1>{song.title_with_featured}</h1>
-          <h2>{song.primary_artist?.name}</h2>
-        </Info>
+        <InfoContainer>
+          <SongTitle>{song.title_with_featured}</SongTitle>
+          <ArtistName>{song.primary_artist?.name}</ArtistName>
+        </InfoContainer>
       </Header>
-
-      <LyricsContainer>
-        <div>{song.lyrics}</div>
-
-        {song.media ? <Media medias={song.media} /> : null}
-      </LyricsContainer>
+      <ContentContainer>
+        <Lyrics>{song.lyrics}</Lyrics>
+        {song?.media ? (
+          <SongInfoContainer>
+            <Media medias={song.media} />
+            <SongInfo
+              artist={song.primary_artist}
+              album={song.album}
+              releaseDate={song.release_date_for_display}
+              writers={song.writer_artists}
+            />
+          </SongInfoContainer>
+        ) : (
+          ''
+        )}
+      </ContentContainer>
     </Container>
   );
 };

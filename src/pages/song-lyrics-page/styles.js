@@ -11,17 +11,31 @@ export const Header = styled.div`
   display: flex;
 `;
 
-export const Info = styled.div`
-  margin-left: 1rem;
+export const InfoContainer = styled.div`
+  margin-left: 2rem;
 `;
 
-export const LyricsContainer = styled.div`
+export const SongTitle = styled.h1``;
+
+export const ArtistName = styled.h2``;
+
+export const ContentContainer = styled.div`
   margin-top: 2rem;
-  white-space: pre-wrap;
   font-family: Arial, sans-serif;
-  line-height: 1.5;
   color: #444;
   display: flex;
+}
+`;
+
+export const Lyrics = styled.div`
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+`;
+
+export const SongInfoContainer = styled.div`
+  margin-left:auto;
+  max-width: 452px;
 }
 `;
 
