@@ -11,13 +11,15 @@ export const Header = styled.div`
   display: flex;
 `;
 
-export const InfoContainer = styled.div`
-  margin-left: 2rem;
+export const ArtistPhoto = styled.img`
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 `;
 
-export const SongTitle = styled.h1``;
-
-export const ArtistName = styled.h2``;
+export const ArtistName = styled.h1`
+  margin-left: 2rem;
+`;
 
 export const ContentContainer = styled.div`
   margin-top: 2rem;
@@ -27,20 +29,16 @@ export const ContentContainer = styled.div`
 }
 `;
 
-export const Lyrics = styled.div`
+export const ArtistInfo = styled.div`
   white-space: pre-wrap;
+  width: 50%;
   line-height: 1.5;
 }
 `;
 
-export const SongInfoContainer = styled.div`
-  margin-left: auto;
-  max-width: 452px;
-}
+export const Title = styled.h2`
+  font-size: 20px;
+  margin-top: 2rem;
 `;
 
-export const Image = styled.img`
-  width: 150px;
-  height: 150px;
-  border: solid #44444433;
-`;
+export const SongsContainer = styled.div``;
