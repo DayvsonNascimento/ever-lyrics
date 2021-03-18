@@ -49,6 +49,7 @@ const ArtistPage = () => {
             <SongCard
               key={index}
               songInfo={song.result}
+              style={{ width: '35%', margin: '5px', padding: '0.8rem' }}
               // handleSelection={handleSongSelection}
             />
           ))}

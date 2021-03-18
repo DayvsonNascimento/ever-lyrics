@@ -32,7 +32,7 @@ const SongInfo = ({ artist, album, releaseDate, writers }) => {
         <Label>
           Artist:
           <ArtistName onClick={() => showArtistPage(artist)}>
-            {artist.name}
+            {' ' + artist.name}
           </ArtistName>
         </Label>
         <Label>

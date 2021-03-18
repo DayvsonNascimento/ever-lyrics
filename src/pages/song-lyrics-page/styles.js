@@ -4,7 +4,18 @@ export const Container = styled.div`
   margin: 0 auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  max-width: 65%;
+  width: 100%;
+  position: relative;
+
+  @media (min-width: 480px) {
+    max-width: 728px;
+  }
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
 `;
 
 export const Header = styled.div`
