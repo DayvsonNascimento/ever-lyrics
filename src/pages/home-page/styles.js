@@ -13,7 +13,7 @@ export const Container = styled.div`
 export const Title = styled.h1`
   color: white;
   display: inline-flex;
-  padding-left: 4.0rem;;
+  padding-left: 4.0rem;
 `;
 
 export const MusicNote = styled.div`

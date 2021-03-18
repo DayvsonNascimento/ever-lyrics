@@ -1,4 +1,4 @@
-import HomePage from './pages/home/Home';
+import HomePage from './pages/home-page/HomePage';
 import SearchPage from './pages/search-page/SearchPage';
 import SongLyricsPage from './pages/song-lyrics-page/SongLyricsPage';
 
