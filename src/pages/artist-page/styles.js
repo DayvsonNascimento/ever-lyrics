@@ -32,17 +32,20 @@ export const ArtistName = styled.h1`
 `;
 
 export const ContentContainer = styled.div`
-  margin-top: 2rem;
   font-family: Arial, sans-serif;
   color: #444;
   display: flex;
 }
 `;
 
-export const ArtistInfo = styled.div`
-  white-space: pre-wrap;
+export const DiscriptionContainer = styled.div`
   width: 100%;
   min-width: 500px;
+}
+`;
+
+export const ArtistInfo = styled.div`
+  white-space: pre-wrap;
   line-height: 1.5;
 }
 `;
@@ -50,6 +53,11 @@ export const ArtistInfo = styled.div`
 export const Title = styled.h2`
   font-size: 20px;
   margin-top: 2rem;
+`;
+
+export const TitleSongs = styled(Title)`
+  width: 100%;
+  margin-left: 4rem;
 `;
 
 export const SongsContainer = styled.div`

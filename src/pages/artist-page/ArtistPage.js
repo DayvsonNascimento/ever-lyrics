@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import SongCard from '../../components/song-card/SongCard';
 
@@ -13,13 +13,17 @@ import {
   ContentContainer,
   ArtistInfo,
   Title,
+  TitleSongs,
+  DiscriptionContainer,
   SongsContainer,
 } from './styles.js';
+
+const MAX_LENTGH = 1400;
 
 const ArtistPage = () => {
   const [artist, setArtist] = useState({});
 
-  const location = useLocation();
+  const history = useHistory();
 
   const loadArtistInfo = async (artistId) => {
     const params = { id: artistId };
@@ -29,11 +33,17 @@ const ArtistPage = () => {
     setArtist(response?.data?.artist);
   };
 
+  const handleSongSelection = (song) => {
+    const path = '/lyrics';
+
+    history.push({ pathname: path, state: { songId: song.id } });
+  };
+
   useEffect(() => {
-    const artistId = location?.state.artistId;
+    const artistId = history?.location?.state.artistId;
 
     loadArtistInfo(artistId);
-  }, [location]);
+  }, [history]);
 
   return (
     <Container>
@@ -41,16 +51,30 @@ const ArtistPage = () => {
         <ArtistPhoto src={artist.image_url}></ArtistPhoto>
         <ArtistName> {artist.name}</ArtistName>
       </Header>
-      <Title>About {artist.name}</Title>
       <ContentContainer>
-        <ArtistInfo>{artist.description?.plain}</ArtistInfo>
+        <DiscriptionContainer>
+          <Title>About {artist.name}</Title>
+          {artist.description?.plain?.length > MAX_LENTGH ? (
+            <ArtistInfo>
+              {artist.description?.plain.substring(0, MAX_LENTGH) + '... '}
+              <a href='#'>read more</a>
+            </ArtistInfo>
+          ) : (
+            <ArtistInfo>{artist.description?.plain}</ArtistInfo>
+          )}
+        </DiscriptionContainer>
         <SongsContainer>
+          <TitleSongs>Popular Songs</TitleSongs>
           {artist.top_songs?.hits.map((song, index) => (
             <SongCard
               key={index}
               songInfo={song.result}
-              style={{ width: '35%', margin: '5px', padding: '0.8rem' }}
-              // handleSelection={handleSongSelection}
+              style={{
+                width: '35%',
+                margin: '5px',
+                padding: '0.8rem',
+              }}
+              handleSelection={handleSongSelection}
             />
           ))}
         </SongsContainer>
