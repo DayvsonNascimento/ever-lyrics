@@ -28,7 +28,13 @@ export const InfoContainer = styled.div`
 
 export const SongTitle = styled.h1``;
 
-export const ArtistName = styled.h2``;
+export const ArtistName = styled.span`
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+`;
 
 export const ContentContainer = styled.div`
   margin-top: 2rem;

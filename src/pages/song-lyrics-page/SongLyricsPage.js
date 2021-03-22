@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import * as API from '../../services/search-service';
 
@@ -19,7 +19,7 @@ import {
 
 const SongLyricsPage = () => {
   const [song, setSong] = useState({});
-  const location = useLocation();
+  const history = useHistory();
 
   const loadSongLyrics = async (selectedSongId) => {
     const params = { song_id: selectedSongId };
@@ -28,11 +28,17 @@ const SongLyricsPage = () => {
     setSong(response?.data?.song);
   };
 
+  const showArtistPage = (artist) => {
+    const path = '/artist';
+
+    history.push({ pathname: path, state: { artistId: artist.id } });
+  };
+
   useEffect(() => {
-    const selectedSongId = location?.state.songId;
+    const selectedSongId = history?.location?.state.songId;
 
     loadSongLyrics(selectedSongId);
-  }, [location]);
+  }, [history]);
 
   return (
     <Container>
@@ -40,7 +46,9 @@ const SongLyricsPage = () => {
         <Image src={song.song_art_image_thumbnail_url}></Image>
         <InfoContainer>
           <SongTitle>{song.title_with_featured}</SongTitle>
-          <ArtistName>{song.primary_artist?.name}</ArtistName>
+          <ArtistName onClick={() => showArtistPage(song.primary_artist)}>
+            {song.primary_artist?.name}
+          </ArtistName>
         </InfoContainer>
       </Header>
       <ContentContainer>
