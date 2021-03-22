@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import SongCard from '../../components/song-card/SongCard';
+import ArtistInfo from '../../components/artist-info/ArtistInfo';
 
 import * as API from '../../services/search-service';
 
@@ -11,14 +12,9 @@ import {
   ArtistPhoto,
   ArtistName,
   ContentContainer,
-  ArtistInfo,
-  Title,
   TitleSongs,
-  DiscriptionContainer,
   SongsContainer,
 } from './styles.js';
-
-const MAX_LENTGH = 1400;
 
 const ArtistPage = () => {
   const [artist, setArtist] = useState({});
@@ -52,17 +48,10 @@ const ArtistPage = () => {
         <ArtistName> {artist.name}</ArtistName>
       </Header>
       <ContentContainer>
-        <DiscriptionContainer>
-          <Title>About {artist.name}</Title>
-          {artist.description?.plain?.length > MAX_LENTGH ? (
-            <ArtistInfo>
-              {artist.description?.plain.substring(0, MAX_LENTGH) + '... '}
-              <a href='#'>read more</a>
-            </ArtistInfo>
-          ) : (
-            <ArtistInfo>{artist.description?.plain}</ArtistInfo>
-          )}
-        </DiscriptionContainer>
+        <ArtistInfo
+          name={artist.name}
+          description={artist.description}
+        />
         <SongsContainer>
           <TitleSongs>Popular Songs</TitleSongs>
           {artist.top_songs?.hits.map((song, index) => (

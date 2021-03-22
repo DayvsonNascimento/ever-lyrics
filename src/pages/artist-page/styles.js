@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 export const Container = styled.div`
   margin: 0 auto;
   margin-top: 2rem;
@@ -19,6 +18,7 @@ export const Container = styled.div`
 `;
 export const Header = styled.div`
   display: flex;
+  margin-bottom: 2rem;
 `;
 
 export const ArtistPhoto = styled.img`
@@ -38,24 +38,9 @@ export const ContentContainer = styled.div`
 }
 `;
 
-export const DiscriptionContainer = styled.div`
-  width: 100%;
-  min-width: 500px;
-}
-`;
-
-export const ArtistInfo = styled.div`
-  white-space: pre-wrap;
-  line-height: 1.5;
-}
-`;
-
-export const Title = styled.h2`
+export const TitleSongs = styled.h2`
   font-size: 20px;
   margin-top: 2rem;
-`;
-
-export const TitleSongs = styled(Title)`
   width: 100%;
   margin-left: 4rem;
 `;
