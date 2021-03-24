@@ -22,4 +22,5 @@ export const Title = styled.h2`
 export const ReadMore = styled.span`
   color: #1a649c;
   cursor: pointer;
+  display: ${(props) => (props.showFullDescription ? 'none' : 'block')};
 `;

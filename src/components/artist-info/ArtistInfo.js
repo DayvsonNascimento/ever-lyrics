@@ -27,13 +27,12 @@ const ArtistInfo = ({ name, description }) => {
       {description?.plain?.length > MAX_LENTGH ? (
         <ArtistDescription>
           {descriptionText}
-          {!showFullDescription ? (
-            <ReadMore onClick={() => toggleFullDescription()}>
-              read more
-            </ReadMore>
-          ) : (
-            ''
-          )}
+          <ReadMore
+            onClick={() => toggleFullDescription()}
+            showFullDescription={showFullDescription}
+          >
+            read more
+          </ReadMore>
         </ArtistDescription>
       ) : (
         <ArtistDescription>{description?.plain}</ArtistDescription>
