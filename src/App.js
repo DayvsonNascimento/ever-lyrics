@@ -23,10 +23,10 @@ function App() {
             <Route exact path='/results' component={SearchPage}></Route>
             <Route exact path='/lyrics/:id' component={SongLyricsPage}></Route>
             <Route exact path='/artist/:id' component={ArtistPage}></Route>
+            <Route exact path='*'>
+              <Redirect to='/' />
+            </Route>
           </>
-          <Route exact path='*'>
-            <Redirect to='/' />
-          </Route>
         </Switch>
       </Router>
     </div>
