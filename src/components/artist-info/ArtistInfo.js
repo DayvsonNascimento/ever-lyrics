@@ -1,5 +1,6 @@
-import { Container, Title, ArtistDescription, ReadMore } from './styles';
 import { useState, useEffect } from 'react';
+
+import { Container, Title, ArtistDescription, ReadMore } from './styles';
 
 const MAX_LENTGH = 1300;
 

@@ -1,4 +1,5 @@
 import SearchBar from '../../components/search-bar/SearchBar';
+
 import { Container, Title, MusicNote } from './styles';
 
 const HomePage = () => {

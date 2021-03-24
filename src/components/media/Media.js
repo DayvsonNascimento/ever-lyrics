@@ -7,7 +7,7 @@ const Media = ({ medias }) => {
 
   const getYoutubeUrl = () => media?.youtube?.replace('watch?v=', 'embed/');
 
-  const openExternalLink = (url) => {
+  const openExternalURL = (url) => {
     const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
     if (newWindow) newWindow.opener = null;
   };
@@ -30,12 +30,12 @@ const Media = ({ medias }) => {
         <Title>Listen also on</Title>
         <Icon
           src='/spotify.png'
-          onClick={() => openExternalLink(media.spotify)}
+          onClick={() => openExternalURL(media.spotify)}
           style={{ display: media.spotify ? 'inline-block' : 'none' }}
         ></Icon>
         <Icon
           src='/soundcloud.png'
-          onClick={() => openExternalLink(media.soundcloud)}
+          onClick={() => openExternalURL(media.soundcloud)}
           style={{ display: media.soundcloud ? 'inline-block' : 'none' }}
         ></Icon>
       </ContentContainer>
