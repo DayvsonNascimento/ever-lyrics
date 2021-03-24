@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  margin-left: auto;
+`;
+
 export const Player = styled.iframe`
   width: 450px;
   height: 280px;
@@ -8,14 +12,12 @@ export const Player = styled.iframe`
   margin-bottom: 1rem;
 `;
 
-export const PlayerContainer = styled.div`
-  margin-left: auto;
-`;
-
 export const Title = styled.h2`
   font-size: 20px;
   margin-top: 0px;
 `;
+
+export const ContentContainer = styled.div``;
 
 export const Icon = styled.img`
   height: 40px;
