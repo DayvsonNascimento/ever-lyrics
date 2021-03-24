@@ -31,9 +31,9 @@ const SongLyricsPage = ({ match }) => {
   };
 
   const showArtistPage = (artist) => {
-    const path = '/artist';
+    const path = `/artist/${artist.id}`;
 
-    history.push({ pathname: path, state: { artistId: artist.id } });
+    history.push(path);
   };
 
   useEffect(() => {

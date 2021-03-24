@@ -20,9 +20,9 @@ const SongInfo = ({ artist, album, releaseDate, writers }) => {
   };
 
   const showArtistPage = (artist) => {
-    const path = '/artist';
+    const path = `/artist/${artist.id}`;
 
-    history.push({ pathname: path, state: { artistId: artist.id } });
+    history.push(path);
   };
 
   return (

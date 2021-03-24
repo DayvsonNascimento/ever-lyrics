@@ -17,7 +17,7 @@ import {
   SongsContainer,
 } from './styles.js';
 
-const ArtistPage = () => {
+const ArtistPage = ({ match }) => {
   const [artist, setArtist] = useState();
 
   const history = useHistory();
@@ -31,16 +31,16 @@ const ArtistPage = () => {
   };
 
   const handleSongSelection = (song) => {
-    const path = '/lyrics';
+    const path = `/lyrics/${song.id}`;
 
-    history.push({ pathname: path, state: { songId: song.id } });
+    history.push(path);
   };
 
   useEffect(() => {
-    const artistId = history?.location?.state.artistId;
+    const artistId = match?.params?.id;
 
     loadArtistInfo(artistId);
-  }, [history]);
+  }, [match]);
 
   return (
     <>
