@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import SongCard from '../../components/song-card/SongCard';
+import LoadingSpinner from '../../components/loading-spinner/LoadingSpinner';
 
 import * as API from '../../services/search-service';
 
 import { Container, Title } from './styles.js';
 
 const SearchResultPage = () => {
-  const [songs, setSongs] = useState([]);
+  const [songs, setSongs] = useState();
   const [searchQuery, setSearchQuery] = useState('');
   const history = useHistory();
 
@@ -38,13 +39,17 @@ const SearchResultPage = () => {
   return (
     <Container>
       <Title>Top results for "{searchQuery}" </Title>
-      {songs.map((song, index) => (
-        <SongCard
-          key={song?.id || index}
-          songInfo={song}
-          handleSelection={handleSongSelection}
-        />
-      ))}
+      {songs ? (
+        songs.map((song, index) => (
+          <SongCard
+            key={index}
+            songInfo={song}
+            handleSelection={handleSongSelection}
+          />
+        ))
+      ) : (
+        <LoadingSpinner />
+      )}
     </Container>
   );
 };

@@ -23,7 +23,7 @@ const ArtistInfo = ({ name, description }) => {
 
   return (
     <Container>
-      <Title>{name ? `About ${name}` : ''}</Title>
+      <Title>{`About ${name}`}</Title>
       {description?.plain?.length > MAX_LENTGH ? (
         <ArtistDescription>
           {descriptionText}

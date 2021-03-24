@@ -1,6 +1,7 @@
 import { CardContainer, Title, Image, SubTitle, CardContent } from './styles';
 
 const SongCard = ({ songInfo, handleSelection, style }) => {
+
   return (
     <CardContainer onClick={() => handleSelection(songInfo)} style={style}>
       <Image src={songInfo.song_art_image_thumbnail_url} />

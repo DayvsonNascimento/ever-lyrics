@@ -5,13 +5,13 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 60vh;
+  min-height: 40vh;
 `;
 
 export const Spinner = styled.div`
   display: inline-block;
-  width: 6rem;
-  height: 6rem;
+  width: 2rem;
+  height: 2rem;
   vertical-align: text-bottom;
   border: 0.25em solid;
   border-right: 0.25em solid transparent;

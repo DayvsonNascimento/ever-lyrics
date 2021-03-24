@@ -5,6 +5,8 @@ import * as API from '../../services/search-service';
 
 import Media from '../../components/media/Media';
 import SongInfo from '../../components/song-info/SongInfo';
+import LoadingSpinner from '../../components/loading-spinner/LoadingSpinner';
+
 import {
   Container,
   Image,
@@ -18,7 +20,7 @@ import {
 } from './styles.js';
 
 const SongLyricsPage = () => {
-  const [song, setSong] = useState({});
+  const [song, setSong] = useState();
   const history = useHistory();
 
   const loadSongLyrics = async (selectedSongId) => {
@@ -41,33 +43,35 @@ const SongLyricsPage = () => {
   }, [history]);
 
   return (
-    <Container>
-      <Header>
-        <Image src={song.song_art_image_thumbnail_url}></Image>
-        <InfoContainer>
-          <SongTitle>{song.title_with_featured}</SongTitle>
-          <ArtistName onClick={() => showArtistPage(song.primary_artist)}>
-            {song.primary_artist?.name}
-          </ArtistName>
-        </InfoContainer>
-      </Header>
-      <ContentContainer>
-        <Lyrics>{song.lyrics}</Lyrics>
-        {song?.media ? (
-          <SongInfoContainer>
-            <Media medias={song.media} />
-            <SongInfo
-              artist={song.primary_artist}
-              album={song.album}
-              releaseDate={song.release_date_for_display}
-              writers={song.writer_artists}
-            />
-          </SongInfoContainer>
-        ) : (
-          ''
-        )}
-      </ContentContainer>
-    </Container>
+    <>
+      {song ? (
+        <Container>
+          <Header>
+            <Image src={song.song_art_image_thumbnail_url}></Image>
+            <InfoContainer>
+              <SongTitle>{song.title_with_featured}</SongTitle>
+              <ArtistName onClick={() => showArtistPage(song.primary_artist)}>
+                {song.primary_artist?.name}
+              </ArtistName>
+            </InfoContainer>
+          </Header>
+          <ContentContainer>
+            <Lyrics>{song.lyrics}</Lyrics>
+            <SongInfoContainer>
+              <Media medias={song.media} />
+              <SongInfo
+                artist={song.primary_artist}
+                album={song.album}
+                releaseDate={song.release_date_for_display}
+                writers={song.writer_artists}
+              />
+            </SongInfoContainer>
+          </ContentContainer>
+        </Container>
+      ) : (
+        <LoadingSpinner />
+      )}
+    </>
   );
 };
 
