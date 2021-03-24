@@ -43,7 +43,7 @@ const SearchResultPage = () => {
         songs.map((song, index) => (
           <SongCard
             key={index}
-            songInfo={song}
+            song={song}
             handleSelection={handleSongSelection}
           />
         ))

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import SongCard from '../../components/song-card/SongCard';
 import ArtistInfo from '../../components/artist-info/ArtistInfo';
@@ -20,20 +19,12 @@ import {
 const ArtistPage = ({ match }) => {
   const [artist, setArtist] = useState();
 
-  const history = useHistory();
-
   const loadArtistInfo = async (artistId) => {
     const params = { id: artistId };
     const response = await API.getArtistInfo(params);
 
     console.log(response);
     setArtist(response?.data?.artist);
-  };
-
-  const handleSongSelection = (song) => {
-    const path = `/lyrics/${song.id}`;
-
-    history.push(path);
   };
 
   useEffect(() => {
@@ -57,13 +48,12 @@ const ArtistPage = ({ match }) => {
               {artist.top_songs?.hits.map((song, index) => (
                 <SongCard
                   key={index}
-                  songInfo={song.result}
+                  song={song.result}
                   style={{
                     width: '35%',
                     margin: '5px',
                     padding: '0.8rem',
                   }}
-                  handleSelection={handleSongSelection}
                 />
               ))}
             </SongsContainer>
