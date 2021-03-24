@@ -10,8 +10,8 @@ export const Container = styled.div`
 
 export const Spinner = styled.div`
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   vertical-align: text-bottom;
   border: 0.25em solid;
   border-right: 0.25em solid transparent;

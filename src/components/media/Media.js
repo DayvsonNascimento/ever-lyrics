@@ -30,7 +30,7 @@ const Media = ({ medias }) => {
           <Title>Listen also on</Title>
           {media.spotify ? (
             <Icon
-              src='spotify.png'
+              src='/spotify.png'
               onClick={() => openLink(media.spotify)}
             ></Icon>
           ) : (
@@ -38,7 +38,7 @@ const Media = ({ medias }) => {
           )}
           {media.soundcloud ? (
             <Icon
-              src='soundcloud.png'
+              src='/soundcloud.png'
               onClick={() => openLink(media.soundcloud)}
             ></Icon>
           ) : (

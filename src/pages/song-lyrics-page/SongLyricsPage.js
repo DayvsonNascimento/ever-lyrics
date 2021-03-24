@@ -19,7 +19,7 @@ import {
   SongInfoContainer,
 } from './styles.js';
 
-const SongLyricsPage = () => {
+const SongLyricsPage = ({ match }) => {
   const [song, setSong] = useState();
   const history = useHistory();
 
@@ -37,10 +37,10 @@ const SongLyricsPage = () => {
   };
 
   useEffect(() => {
-    const selectedSongId = history?.location?.state.songId;
+    const selectedSongId = match?.params?.id;
 
     loadSongLyrics(selectedSongId);
-  }, [history]);
+  }, [match]);
 
   return (
     <>

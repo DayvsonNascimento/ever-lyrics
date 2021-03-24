@@ -31,9 +31,9 @@ const SearchResultPage = () => {
   };
 
   const handleSongSelection = (song) => {
-    const path = '/lyrics';
+    const path = `/lyrics/${song.id}`;
 
-    history.push({ pathname: path, state: { songId: song.id } });
+    history.push(path);
   };
 
   return (

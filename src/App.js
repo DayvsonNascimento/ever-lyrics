@@ -21,7 +21,7 @@ function App() {
           <>
             <Navbar />
             <Route exact path='/results' component={SearchPage}></Route>
-            <Route exact path='/lyrics' component={SongLyricsPage}></Route>
+            <Route exact path='/lyrics/:id' component={SongLyricsPage}></Route>
             <Route exact path='/artist' component={ArtistPage}></Route>
           </>
           <Route exact path='*'>
