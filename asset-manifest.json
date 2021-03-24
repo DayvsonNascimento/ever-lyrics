@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.b9ded5a1.chunk.css",
-    "main.js": "/static/js/main.bc6ffc96.chunk.js",
-    "main.js.map": "/static/js/main.bc6ffc96.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.62909478.js",
-    "runtime-main.js.map": "/static/js/runtime-main.62909478.js.map",
-    "static/js/2.56878495.chunk.js": "/static/js/2.56878495.chunk.js",
-    "static/js/2.56878495.chunk.js.map": "/static/js/2.56878495.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.b9ded5a1.chunk.css.map": "/static/css/main.b9ded5a1.chunk.css.map",
-    "static/js/2.56878495.chunk.js.LICENSE.txt": "/static/js/2.56878495.chunk.js.LICENSE.txt"
+    "main.css": "/ever-lyrics/static/css/main.b9ded5a1.chunk.css",
+    "main.js": "/ever-lyrics/static/js/main.bc6ffc96.chunk.js",
+    "main.js.map": "/ever-lyrics/static/js/main.bc6ffc96.chunk.js.map",
+    "runtime-main.js": "/ever-lyrics/static/js/runtime-main.3a9d716f.js",
+    "runtime-main.js.map": "/ever-lyrics/static/js/runtime-main.3a9d716f.js.map",
+    "static/js/2.fba78aa6.chunk.js": "/ever-lyrics/static/js/2.fba78aa6.chunk.js",
+    "static/js/2.fba78aa6.chunk.js.map": "/ever-lyrics/static/js/2.fba78aa6.chunk.js.map",
+    "index.html": "/ever-lyrics/index.html",
+    "static/css/main.b9ded5a1.chunk.css.map": "/ever-lyrics/static/css/main.b9ded5a1.chunk.css.map",
+    "static/js/2.fba78aa6.chunk.js.LICENSE.txt": "/ever-lyrics/static/js/2.fba78aa6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.62909478.js",
-    "static/js/2.56878495.chunk.js",
+    "static/js/runtime-main.3a9d716f.js",
+    "static/js/2.fba78aa6.chunk.js",
     "static/css/main.b9ded5a1.chunk.css",
     "static/js/main.bc6ffc96.chunk.js"
   ]
