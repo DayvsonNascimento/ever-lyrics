@@ -5,7 +5,12 @@ import { Container, Player, Title, ContentContainer, Icon } from './styles';
 const Media = ({ medias }) => {
   const [media, setMedia] = useState({});
 
-  const getYoutubeUrl = () => media?.youtube?.replace('watch?v=', 'embed/');
+  const getYoutubeURL = () => {
+    let url = media?.youtube?.replace('watch?v=', 'embed/');
+    url = url?.replace('http', 'https');
+
+    return url;
+  };
 
   const openExternalURL = (url) => {
     const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
@@ -23,7 +28,7 @@ const Media = ({ medias }) => {
   return (
     <Container>
       <Title>Music Video</Title>
-      <Player src={getYoutubeUrl()}></Player>
+      <Player src={getYoutubeURL()}></Player>
       <ContentContainer
         style={{ display: Object.keys(media).length > 1 ? 'block' : 'none' }}
       >
