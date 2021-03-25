@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ever-lyrics/static/css/main.b9ded5a1.chunk.css",
-    "main.js": "/ever-lyrics/static/js/main.49ac4ae8.chunk.js",
-    "main.js.map": "/ever-lyrics/static/js/main.49ac4ae8.chunk.js.map",
+    "main.js": "/ever-lyrics/static/js/main.db038b4f.chunk.js",
+    "main.js.map": "/ever-lyrics/static/js/main.db038b4f.chunk.js.map",
     "runtime-main.js": "/ever-lyrics/static/js/runtime-main.3a9d716f.js",
     "runtime-main.js.map": "/ever-lyrics/static/js/runtime-main.3a9d716f.js.map",
     "static/js/2.9986d98f.chunk.js": "/ever-lyrics/static/js/2.9986d98f.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.3a9d716f.js",
     "static/js/2.9986d98f.chunk.js",
     "static/css/main.b9ded5a1.chunk.css",
-    "static/js/main.49ac4ae8.chunk.js"
+    "static/js/main.db038b4f.chunk.js"
   ]
 }
