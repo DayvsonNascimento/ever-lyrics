@@ -29,12 +29,12 @@ const Media = ({ medias }) => {
       >
         <Title>Listen also on</Title>
         <Icon
-          src='/spotify.png'
+          src={process.env.PUBLIC_URL + '/spotify.png'}
           onClick={() => openExternalURL(media.spotify)}
           style={{ display: media.spotify ? 'inline-block' : 'none' }}
         ></Icon>
         <Icon
-          src='/soundcloud.png'
+          src={process.env.PUBLIC_URL + '/soundcloud.png'}
           onClick={() => openExternalURL(media.soundcloud)}
           style={{ display: media.soundcloud ? 'inline-block' : 'none' }}
         ></Icon>
