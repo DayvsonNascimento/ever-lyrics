@@ -46,7 +46,7 @@ export const ContentContainer = styled.div`
 
 export const TitleSongs = styled.h2`
   font-size: 20px;
-  margin-top: 2rem;
+  margin-top: 1.8rem;
   width: 100%;
   margin-left: 7.0vw;
 
