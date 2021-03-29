@@ -24,6 +24,7 @@ export const Container = styled.div`
 
 export const ArtistDescription = styled.div`
   white-space: pre-wrap;
+  text-align: justify;
   line-height: 1.5;
 }
 `;

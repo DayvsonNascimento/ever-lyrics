@@ -12,7 +12,7 @@ export const Player = styled.iframe`
   margin-bottom: 1rem;
 
   @media (max-width: 992px) {
-    width: 350px;
+    width: 342px;
   }
 
   @media (max-width: 351px) {
