@@ -23,7 +23,6 @@ const ArtistPage = ({ match }) => {
     const params = { id: artistId };
     const response = await API.getArtistInfo(params);
 
-    console.log(response);
     setArtist(response?.data?.artist);
   };
 

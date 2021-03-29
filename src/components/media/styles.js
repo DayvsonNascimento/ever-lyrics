@@ -10,6 +10,14 @@ export const Player = styled.iframe`
   border: solid #44444433;
   border-width: 1px;
   margin-bottom: 1rem;
+
+  @media (max-width: 992px) {
+    width: 350px;
+  }
+
+  @media (max-width: 351px) {
+    width: 300px;
+  }
 `;
 
 export const Title = styled.h2`

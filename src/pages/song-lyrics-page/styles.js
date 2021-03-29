@@ -41,6 +41,10 @@ export const ContentContainer = styled.div`
   font-family: Arial, sans-serif;
   color: #444;
   display: flex;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
 }
 `;
 
@@ -53,6 +57,11 @@ export const Lyrics = styled.div`
 export const SongInfoContainer = styled.div`
   margin-left: auto;
   max-width: 452px;
+
+  @media (max-width: 992px) {
+    margin-left: 0px;
+    margin-top: 2rem;
+  }
 }
 `;
 
