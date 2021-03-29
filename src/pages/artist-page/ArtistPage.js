@@ -49,7 +49,7 @@ const ArtistPage = ({ match }) => {
                   key={index}
                   song={song.result}
                   style={{
-                    width: '35%',
+                    width: '235px',
                     margin: '5px',
                     padding: '0.8rem',
                   }}

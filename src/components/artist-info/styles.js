@@ -2,9 +2,23 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  min-width: 500px;
   padding: 1.5rem;
   background-color: white;
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
+
+  @media (min-width: 550px) {
+    max-width: 480px;
+    margin: 5px;
+  }
+  
+  @media (min-width: 743px) {
+    max-width: 665px;
+  }
+  @media (min-width: 856px) {
+    max-width: 960px;
+  }
 }
 `;
 

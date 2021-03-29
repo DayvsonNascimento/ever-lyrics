@@ -17,6 +17,7 @@ export const Container = styled.div`
     max-width: 1140px;
   }
 `;
+
 export const Header = styled.div`
   display: flex;
   margin-bottom: 2rem;
@@ -36,6 +37,10 @@ export const ContentContainer = styled.div`
   font-family: Arial, sans-serif;
   color: #444;
   display: flex;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
 }
 `;
 
@@ -43,7 +48,12 @@ export const TitleSongs = styled.h2`
   font-size: 20px;
   margin-top: 2rem;
   width: 100%;
-  margin-left: 4rem;
+  margin-left: 7.0vw;
+
+  @media (max-width: 992px) {
+    margin-left: 0px;
+    padding-left: 1rem;
+  }
 `;
 
 export const SongsContainer = styled.div`

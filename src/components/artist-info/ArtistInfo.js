@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { Container, Title, ArtistDescription, ReadMore } from './styles';
 
-const MAX_LENTGH = 1300;
+const MAX_LENTGH = 800;
 
 const ArtistInfo = ({ name, description }) => {
   const [descriptionText, setdescriptionText] = useState('');

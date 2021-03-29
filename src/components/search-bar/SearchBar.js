@@ -21,7 +21,7 @@ const SearchBar = () => {
   return (
     <Form onSubmit={(e) => handleSearch(e)}>
       <SearchInput
-        placeholder='Search songs and more...'
+        placeholder='Search song lyrics...'
         value={searchText}
         onChange={(e) => setsearchText(e.target.value)}
       />
