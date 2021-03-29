@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Form = styled.form`
   width: 25%;
-  min-width: 195px;
+  min-width: 210px;
   position: relative;
 `;
 
@@ -19,7 +19,7 @@ export const SearchInput = styled.input`
 
 export const SearchButton = styled.button`
   position: absolute;
-  right: 0.5rem;
+  right: 0.5vw;
   top: 0.5rem;
   background: none;
   border: none;
