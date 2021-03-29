@@ -5,8 +5,9 @@ export const Container = styled.div`
   margin-top: 2rem;
   margin-bottom: 2rem;
   width: 100%;
+  max-width: 344px;
   position: relative;
-
+  
   @media (min-width: 480px) {
     max-width: 728px;
   }
